@@ -9,7 +9,7 @@ also having their own separate provisioning, scaling and networking. This legacy
 the fact that VMs have traditionally been much harder to provision than containers.
 
 No more. With VMify VM images are created in seconds with a single command, allowing you to do away with this legacy
-indirection, while at the same time making your infrastructure simpler, more reliable, more secure and cheaper.
+indirection, while at the same time making your infrastructure simpler, more reliable and more secure.
 
 ## What
 

@@ -31,7 +31,7 @@ VMify compiles your Docker image into a machine image by combining it with VMify
 in-memory Linux OS. This enables your Docker image to boot directly on EC2 virtual hardware.
 
 ### Minimal
-VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing just 1 MB. All it does
+VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing only 1 MB. All it does
 is load the required drivers for the current machine, set up an ACPI daemon to react to reboot and poweroff events and
 enable NTP-based clock synchronization to prevent clock drift. After that it passes control to your container
 image by loading it from a read-only disk partition and launching its entrypoint and cmd in a confined chroot

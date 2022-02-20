@@ -3,13 +3,13 @@
 
 ## Why
 
-Infrastructure has gotten needlessly complicated. Traditional container deployment solutions like Kubernetes or ECS
+Infrastructure has gotten needlessly complicated. Traditional container deployment solutions like Kubernetes and ECS
 are essentially containers with their own provisioning, scaling and networking running on a pool of VMs with their own
 provisioning, scaling and networking. This is a legacy layer of indirection that has grown out of the fact that VMs
 have traditionally been much harder to provision than containers.
 
-With VMify this indirection can be eliminated and infrastructure can be made simpler, more reliable, more secure and
-cheaper at the same time.
+No more. With VMify VM images are created in seconds with a single command, allowing you to do away with this legacy
+indirection, while at the same time making your infrastructure simpler, more reliable, more secure and cheaper.
 
 ## What
 
@@ -27,23 +27,24 @@ Or you can simply launch instances based on it using AWS AutoScaling Groups, the
 ## How
 
 ### Simple
-VMify effectively compiles a machine image by combining your Docker image and VMify NanoOS, enabling it to boot directly
-on virtual hardware such as AWS EC2.
+VMify effectively compiles your Docker image into a machine image by combining it with VMify NanoOS, an ultra-minimal
+in-memory Linux OS, enabling it to boot directly on the virtual hardware of EC2.
 
 ### Minimal
-VMify NanoOS consists just a Linux kernel and a minimal in-memory init system weighing just around 1 MB. All it does is
+VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing just 1 MB. All it does is
 load the required drivers for the current machine, set up an ACPI daemon to react to reboot and poweroff events and
-enable clock synchronization using an NTP daemon to prevent clock drift. After that it passes control to your container
+enable NTP-based clock synchronization to prevent clock drift. After that it passes control to your container
 image by loading it from a read-only disk partition and launching its entrypoint and cmd in a confined chroot
 environment.
 
 ### Fully baked
-There is no runtime provisioning and no Docker daemon as the image is already fully backed. Instances boot almost
+There is no runtime provisioning and no Docker daemon on board as the image is already fully backed. Instances boot
 instantly and are guaranteed to be 100% identical every single time.
 
 ### Secure
-All disk access is read-only to ensure the volume is never modified. Writes are handled by a tmpfs overlay with a 
-configurable amount of swap space, living in a separate ephemeral volume wiped at every boot.
+The whole system has much fewer moving parts. All disk access is read-only, ensuring the volume is never modified.
+Writes are handled by a tmpfs overlay with a configurable amount of swap space, living in a separate ephemeral volume
+wiped at every boot.
 
 ## Getting Started
 

@@ -51,7 +51,7 @@ wiped at every boot.
 ### Prerequisites
 
 #### On AWS
-To get started, all new you need is an IAM user with the following IAM policy:
+To get started, all new you need is an IAM user with the following policy:
 ```json
 {
     "Version": "2012-10-17",
@@ -73,7 +73,7 @@ To get started, all new you need is an IAM user with the following IAM policy:
 ```
 
 #### On your machine
-Now add the users' credentials to a new `[vmify]` section in `~/.aws/credentials` (the same file used by the AWS CLI):
+Add the users' credentials to a new `[vmify]` section in `~/.aws/credentials` (the same file used by the AWS CLI):
 ```ini
 [vmify]
 aws_access_key_id = AKIAXXXXXXXXXXXXXXXX
@@ -81,9 +81,8 @@ aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 Finally, make sure you have
-- a working Docker installation as VMify will leverage that to pull, inspect, squash and
-extract your Docker image
-- internet access as VMify will need it to upload and register your AMI on AWS
+- a working Docker installation enabling VMify to pull, inspect, squash and extract your Docker images
+- internet access so that VMify can upload and register your AMIs on AWS
 
 ### Usage
 

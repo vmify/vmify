@@ -4,9 +4,9 @@
 ## Why
 
 Infrastructure has gotten needlessly complicated. Traditional container deployment solutions like Kubernetes and ECS
-are essentially containers with their own provisioning, scaling and networking running on a pool of VMs with their own
-provisioning, scaling and networking. This is a legacy layer of indirection that has grown out of the fact that VMs
-have traditionally been much harder to provision than containers.
+essentially leave you with containers needing their own provisioning, scaling and networking running on a pool of VMs 
+also having their own separate provisioning, scaling and networking. This legacy layer of indirection has grown out of
+the fact that VMs have traditionally been much harder to provision than containers.
 
 No more. With VMify VM images are created in seconds with a single command, allowing you to do away with this legacy
 indirection, while at the same time making your infrastructure simpler, more reliable, more secure and cheaper.
@@ -28,11 +28,11 @@ Or you can simply launch instances based on it using AWS AutoScaling Groups, the
 
 ### Simple
 VMify effectively compiles your Docker image into a machine image by combining it with VMify NanoOS, an ultra-minimal
-in-memory Linux OS, enabling it to boot directly on the virtual hardware of EC2.
+in-memory Linux OS. This enables your Docker image to boot directly on the EC2 virtual hardware.
 
 ### Minimal
-VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing just 1 MB. All it does is
-load the required drivers for the current machine, set up an ACPI daemon to react to reboot and poweroff events and
+VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing just 1 MB. All it does
+is load the required drivers for the current machine, set up an ACPI daemon to react to reboot and poweroff events and
 enable NTP-based clock synchronization to prevent clock drift. After that it passes control to your container
 image by loading it from a read-only disk partition and launching its entrypoint and cmd in a confined chroot
 environment.
@@ -51,7 +51,7 @@ wiped at every boot.
 ### Prerequisites
 
 #### On AWS
-To get started, all new you need is an IAM user with at least the following IAM policy:
+To get started, all new you need is an IAM user with the following IAM policy:
 ```json
 {
     "Version": "2012-10-17",

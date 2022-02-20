@@ -73,7 +73,7 @@ To get started, all new you need is an IAM user with at least the following IAM 
 
 #### On your machine
 Now add the users' credentials to a new `[vmify]` section in `~/.aws/credentials` (the same file used by the AWS CLI):
-```toml
+```ini
 [vmify]
 aws_access_key_id = AKIAXXXXXXXXXXXXXXXX
 aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

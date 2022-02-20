@@ -107,7 +107,7 @@ Args:
   -t          Timing information suppressed from output
   -d          Debug output turned on during boot
   -b          reBoot instead of terminating upon entrypoint exit
-  -r=region   Region in AWS to use (default: eu-central-1)
+  -r=region   Region in AWS to use (default: us-east-1)
   -w=number   sWap size (in GiB) to use, 0 to disable swap (default: 1)
   -k=args     Kernel arguments (default: quiet)
   -s:key=val  Sysctl to set with this value

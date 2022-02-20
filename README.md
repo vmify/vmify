@@ -81,7 +81,7 @@ aws_secret_access_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 Finally, make sure you have
-- a working Docker installation enabling VMify to pull, inspect, squash and extract your Docker images
+- a working Docker installation enabling VMify to pull, inspect, squash and extract your images
 - internet access so that VMify can upload and register your AMIs on AWS
 
 ### Usage

@@ -4,9 +4,9 @@
 ## Why
 
 Infrastructure has gotten needlessly complicated. Traditional container deployment solutions like Kubernetes and ECS
-essentially leave you with containers needing their own provisioning, scaling and networking running on a pool of VMs 
-also having their own separate provisioning, scaling and networking. This legacy layer of indirection has grown out of
-the fact that VMs have traditionally been much harder to provision than containers.
+essentially leave you with containers requiring their own provisioning, scaling and networking while running on a pool
+of VMs also having their own separate provisioning, scaling and networking. This legacy layer of indirection has grown
+out of the fact that VMs have historically been much harder to provision than containers.
 
 No more. With VMify VM images are created in seconds with a single command, allowing you to do away with this legacy
 indirection, while at the same time making your infrastructure simpler, more reliable and more secure.

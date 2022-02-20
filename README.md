@@ -21,14 +21,14 @@ All it takes is one simple command:
 
 ![Output](screenshot.png?raw=true)
 
-You can then integrate this AMI is your usual **infrastructure as code** deployment processes using CloudFormation and Terraform.
+You can then integrate this AMI in your existing **infrastructure as code** deployment processes using CloudFormation and Terraform.
 Or you can simply launch instances based on it using AWS AutoScaling Groups, the EC2 RunInstances API or the AWS Console.
 
 ## How
 
 ### Simple
-VMify effectively compiles your Docker image into a machine image by combining it with VMify NanoOS, an ultra-minimal
-in-memory Linux OS. This enables your Docker image to boot directly on the EC2 virtual hardware.
+VMify compiles your Docker image into a machine image by combining it with VMify NanoOS, an ultra-minimal
+in-memory Linux OS. This enables your Docker image to boot directly on EC2 virtual hardware.
 
 ### Minimal
 VMify NanoOS consists of just a Linux kernel and an ultra-minimal in-memory init system weighing just 1 MB. All it does

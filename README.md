@@ -13,7 +13,7 @@ indirection, while at the same time making your infrastructure simpler, more rel
 
 ## What
 
-VMify takes your Docker images and turns them into minimal, secure and fully baked AWS AMIs in seconds. 
+VMify takes your Docker images and compiles them into minimal, secure and fully baked AWS AMIs in seconds. 
 
 All it takes is one simple command:
 

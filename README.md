@@ -87,7 +87,7 @@ Finally, make sure you have
 ### Usage
 
 ```
-🚀 VMify
+🚀 VMify 0.0.2 Pre-release
 From Docker Image to Cloud in Seconds
 
 Usage: 
@@ -103,13 +103,14 @@ Params:
   image       The Docker image to compile into an AMI
   
 Args:
-  -q          Quiet mode. Only print AWS AMI id when finished
-  -t          Timing information suppressed from output
+  -q          Quiet mode: only print AWS AMI id upon completion
+  -t          Timings displayed in output
   -d          Debug output turned on during boot
   -b          reBoot instead of terminating upon entrypoint exit
+  -a=arch     Arch for the image (x64 or arm64, default: current cpu arch)
   -r=region   Region in AWS to use (default: us-east-1)
   -w=number   sWap size (in GiB) to use, 0 to disable swap (default: 1)
-  -k=args     Kernel arguments (default: quiet)
+  -k=args     Kernel arguments
   -s:key=val  Sysctl to set with this value
   -h or -?    Show this help message
 ```
@@ -127,6 +128,29 @@ VMify works with the following AWS regions:
 
 ### Instance types
 
-AMIs created by VMify are compatible with the following Intel and AMD instances types:
+AMIs created by VMify are compatible with the following instances types:
+
+#### x64 (Intel and AMD)
 
 `t3`, `t3a`, `m6i`, `m5`, `m5a`, `m5n`, `m5zn`, `c6i`, `c6a`, `c5`, `c5a`, `c5n`, `r5`, `r5b`, `r5a`, `r5n`
+
+#### arm64 (Graviton)
+
+`t4g`, `m6g`, `c6g`, `c6gn`, `r6g`
+
+## Changelog
+
+### 0.0.2 (2022-03-16) - Private pre-release
+
+#### New features
+
+- [#1](https://github.com/vmify/vmify/issues/1) ARM64 image support
+
+#### Breaking changes
+
+- [#8](https://github.com/vmify/vmify/issues/8) Disable timing output by default
+- [#9](https://github.com/vmify/vmify/issues/9) Automatically disable quiet kernel output when debug is active
+
+### 0.0.1 (2022-02-21) - Private pre-release
+
+- Initial release
